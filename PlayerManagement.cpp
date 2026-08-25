@@ -128,6 +128,17 @@ bool loadPlayerDetails(int id,int teamID, Player *player)
         return false;
     
 }
+void saveTeamPlayer(int teamID, int playerID)
+{
+    ofstream file("team_players.csv", ios::app);
+    if(!file)
+    {
+        cout << "Error in Opening a File " << endl;
+        return;
+    }
+    file << teamID<< "," <<playerID << endl;
+    file.close();
+}
 void addPlayer()
 {
     cout << "Enter Team ID for the Player: ";
@@ -181,6 +192,7 @@ void addPlayer()
         temp->next = newPlayer;
     }
     cout << "Player added successfully." << endl;
+    saveTeamPlayer(teamID,playerID);
 
 }
 
@@ -195,6 +207,7 @@ void displayPlayers()
     cout << "------------------------------------------" << endl;
     while(temp != nullptr)
     {
+        cout << "Player Name        : " << temp->playerName << endl;
         cout << "Player ID          : " << temp->playerID << endl;
         cout << "Team ID            : " << temp->teamID << endl;
         cout << "TeamName           : " << temp->teamName << endl;
@@ -269,3 +282,37 @@ void deletePlayer()
     }
     cout << "Player with ID Dont Exsist " << endl;
 }
+void displayPlayersByTeam()
+{
+    int TeamID;
+    cout << "Enter the Team Id : ";
+    cin >> TeamID;
+    if(!checkID(TeamID))
+    {
+        cout << "Team ID is Invalid " << endl;
+        return;
+    }
+    Player *temp = head;
+    Team *team = getTeamByID(TeamID);
+    bool found = false;
+ 
+    cout << "-----------------------------------" << endl;
+    cout << " TEAM NAME     : " << team->TeamName << endl;
+    while(temp != nullptr)
+    {
+        if(temp->teamID == TeamID)
+        {    
+            cout << "Player Name     : " <<temp->playerName << endl;
+            cout << "Player Id       : " <<temp->playerID << endl;
+            found = true;
+        }
+        temp = temp->next;
+    }
+    if(!found)
+    {
+        cout << "Players Had Not Assigned Yet " << endl;
+
+    }
+    cout << "-----------------------------------" << endl;
+}
+
