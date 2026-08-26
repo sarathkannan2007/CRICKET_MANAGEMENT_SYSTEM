@@ -238,7 +238,7 @@ void MatchSimulation::resetInnings()
 
 void MatchSimulation::simulateInnings()
 {
-    // Select correct Playing XI
+    
 
     if(battingTeam == match->getTeam1())
     {
@@ -252,7 +252,7 @@ void MatchSimulation::simulateInnings()
     }
 
 
-    // Get batting head
+ 
 
     strikerNode = battingXI->getHead();
 
@@ -263,19 +263,20 @@ void MatchSimulation::simulateInnings()
         return;
     }
 
+        bowlerNode = bowlingXI->getHead();
 
+        while(bowlerNode != nullptr &&
+              bowlerNode->player->role != "Bowler")
+        {
+              bowlerNode = bowlerNode->next;
+        }
 
-
-    bowlerNode = bowlingXI->getHead();
-
-    if(bowlerNode == nullptr)
-    {
-        cout << "Invalid Bowling XI." << endl;
-        return;
-    }
-
-
-    // Opening batsmen
+        if(bowlerNode == nullptr)
+        {
+             cout << "No Bowler Found in Playing XI." << endl;
+             return;
+        }
+ 
 
     nonStrikerNode = strikerNode->next;
 
@@ -558,6 +559,18 @@ void MatchSimulation::simulateBall()
    
 
             bowlerNode = bowlingXI->getHead();
+
+            while(bowlerNode != nullptr &&
+            bowlerNode->player->role != "Bowler")
+            {
+                 bowlerNode = bowlerNode->next;
+            }
+
+            if(bowlerNode == nullptr)
+            {
+                cout << "No Bowler Found in Playing XI." << endl;
+                return;
+            }
 
             currentBowler = bowlerNode->player;
         }
