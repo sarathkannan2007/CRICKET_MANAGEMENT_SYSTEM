@@ -2,6 +2,7 @@
 
 #include "TeamManagement.h"
 #include "PlayerManagement.h"
+#include "BestX1.h"
 
 using namespace std;
 
@@ -17,6 +18,7 @@ int main()
 
         cout << "1. Team Management" << endl;
         cout << "2. Player Management" << endl;
+        cout << "3. Predict Best X1" << endl;
         cout << "0. Exit" << endl;
 
         cout << "Enter your choice: ";
@@ -124,6 +126,12 @@ int main()
 
                 break;
             }
+            case 3:
+                    int teamID;
+                    cout << "Enter the Team ID : ";
+                    cin >> teamID;
+                    predictBestX1(teamID);
+                    break;
 
             case 0:
                 cout << "Exiting..." << endl;

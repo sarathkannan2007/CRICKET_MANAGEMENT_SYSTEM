@@ -1,11 +1,16 @@
 PlayerID,PlayerName,Age,JerseyNo,Role,BattingRating,BowlingRating
-1001,Arjun Kumar,24,18,Batsman,88,10
-1002,Rahul Dev,26,7,Batsman,82,15
-1003,Karthik Raj,23,45,All Rounder,78,72
-1004,Vignesh Kumar,28,33,Wicket Keeper,80,20
-1005,Pranav S,25,12,Batsman,76,10
-1006,Adithya M,27,9,Bowler,25,88
-1007,Surya Prakash,24,21,Bowler,30,84
-1008,Harish K,29,11,All Rounder,72,76
-1009,Naveen Raj,22,5,Bowler,20,81
-1010,Dinesh Kumar,30,99,Batsman,70,12
+1001,Virat Kohli,37,18,Batsman,95,20
+1002,Rajat Patidar,33,97,Batsman,90,15
+1003,Devdutt Padikkal,26,31,Batsman,86,10
+1004,Tim David,30,19,Batsman,88,25
+1005,Phil Salt,29,28,Wicketkeeper,91,10
+1006,Jitesh Sharma,33,17,Wicketkeeper,85,5
+1007,Jacob Bethell,23,16,All-rounder,88,82
+1008,Krunal Pandya,35,24,All-rounder,78,86
+1009,Venkatesh Iyer,31,26,All-rounder,84,78
+1010,Romario Shepherd,31,23,All-rounder,76,80
+1011,Josh Hazlewood,35,95,Bowler,20,96
+1012,Bhuvneshwar Kumar,36,15,Bowler,25,91
+1013,Yash Dayal,29,21,Bowler,15,87
+1014,Suyash Sharma,23,30,Bowler,10,89
+1015,Jacob Duffy,31,50,Bowler,12,92

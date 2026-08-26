@@ -3,26 +3,9 @@
 #include <fstream>
 #include <sstream>
 #include "TeamManagement.h"
+#include "PlayerManagement.h"
 using namespace std;
-struct Player
-{
-    int playerID;
-    int teamID;
-    string playerName;
-    string teamName;
-    int age;
-    int jerseyNo;
-    string role;
-    int battingRating;
-    int bowlingRating;
-    int runs;
-    int ballsFaced;
-    int fours;
-    int sixes;
-    int wickets;
-    int runsConceded;
-    Player *next;
-};
+
 Player *head = nullptr;
 Player* createPlayer()
 {
@@ -44,6 +27,10 @@ Player* createPlayer()
     newPlayer->runsConceded = 0;
     newPlayer->next = nullptr;
     return newPlayer;
+}
+Player *getPlayerHead()
+{
+    return head;
 }
 bool checkPlayerID(int id)
 {
@@ -304,6 +291,7 @@ void displayPlayersByTeam()
         {    
             cout << "Player Name     : " <<temp->playerName << endl;
             cout << "Player Id       : " <<temp->playerID << endl;
+            cout << endl;
             found = true;
         }
         temp = temp->next;
