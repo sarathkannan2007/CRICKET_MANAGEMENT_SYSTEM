@@ -111,7 +111,7 @@ class PriorityQueue
         }
 };
 
-void predictBestX1(int teamID)
+void predictBestX1(int teamID , PlayingXI &playingXI)
 {
 
     Team *team = getTeamByID(teamID);
@@ -159,7 +159,7 @@ void predictBestX1(int teamID)
     cout << "Playing XI - " << team->TeamName <<endl;
     cout << endl;
 
-    PlayingXI playingXI;
+    
     for(int i = 0;i<4;i++)
     {
         Player *player = batsmanQueue.dequeue();

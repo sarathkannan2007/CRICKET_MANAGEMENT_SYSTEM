@@ -3,7 +3,7 @@
 #include "TeamManagement.h"
 #include "PlayerManagement.h"
 #include "BestX1.h"
-
+#include "Match.h"
 using namespace std;
 
 int main()
@@ -127,12 +127,18 @@ int main()
                 break;
             }
             case 3:
-                    int teamID;
-                    cout << "Enter the Team ID : ";
-                    cin >> teamID;
-                    predictBestX1(teamID);
+            {
+                    int team1ID;
+                    int team2ID;
+                    cout << "Enter the Team 1 ID : ";
+                    cin >> team1ID;
+                    cout << "Enter the Team 2 ID : ";
+                    cin >> team2ID;
+                    Match match(team1ID,team2ID);
+                    match.generatePlayingXIs();
+                    match.displayDashboard();
                     break;
-
+            }
             case 0:
                 cout << "Exiting..." << endl;
                 break;
