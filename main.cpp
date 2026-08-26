@@ -88,7 +88,7 @@ int main()
                     cout << "2. Display Players" << endl;
                     cout << "3. Search Player" << endl;
                     cout << "4. Delete Player" << endl;
-                    cout << "5. Display Players in Team wise";
+                    cout << "5. Display Players in Team wise" << endl;
                     cout << "0. Back" << endl;
 
                     cout << "Enter your choice: ";

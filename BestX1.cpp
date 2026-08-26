@@ -1,5 +1,6 @@
 #include <iostream>
 #include "BestX1.h"
+#include "PlayingXI.h"
 #include "PlayerManagement.h"
 #include "TeamManagement.h"
 using namespace std;
@@ -154,4 +155,42 @@ void predictBestX1(int teamID)
     cout << "WicketKeeper Available : " << wicketkeepermanQueue.size() << endl;
     cout << "All Rounder Available : " << allRounderQueue.size() << endl;
     cout << "Bowlers Available : " << bowlerQueue.size() << endl;
+
+    cout << "Playing XI - " << team->TeamName <<endl;
+    cout << endl;
+
+    PlayingXI playingXI;
+    for(int i = 0;i<4;i++)
+    {
+        Player *player = batsmanQueue.dequeue();
+        if(player != nullptr)
+        {
+            playingXI.addPlayer(player);
+        }
+    }
+    for(int i = 0;i<2;i++)
+    {
+        Player *player = allRounderQueue.dequeue();
+        if(player != nullptr)
+        {
+            playingXI.addPlayer(player);
+        }
+    }
+
+    Player *player = wicketkeepermanQueue.dequeue();
+        if(player != nullptr)
+        {
+            playingXI.addPlayer(player);
+        }
+
+    for(int i = 0;i<4;i++)
+    {
+        Player *player = bowlerQueue.dequeue();
+        if(player != nullptr)
+        {
+            playingXI.addPlayer(player);
+        }
+    }
+    playingXI.display();
+    
 }
