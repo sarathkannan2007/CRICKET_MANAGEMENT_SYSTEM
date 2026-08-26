@@ -15,6 +15,10 @@ class Match
         Match(int team1ID, int team2ID);
         void generatePlayingXIs();
         void displayDashboard();
+        Team *getTeam1();
+        Team *getTeam2();
+        PlayingXI* getTeam1XI();
+        PlayingXI* getTeam2XI();
 };
 
 #endif

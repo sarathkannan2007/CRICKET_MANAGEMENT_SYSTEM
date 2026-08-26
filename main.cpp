@@ -4,6 +4,7 @@
 #include "PlayerManagement.h"
 #include "BestX1.h"
 #include "Match.h"
+#include "MatchSimulation.h"
 using namespace std;
 
 int main()
@@ -137,6 +138,11 @@ int main()
                     Match match(team1ID,team2ID);
                     match.generatePlayingXIs();
                     match.displayDashboard();
+                    MatchSimulation simulation(&match);
+
+                    simulation.startMatch();
+
+                    simulation.simulateInnings();
                     break;
             }
             case 0:

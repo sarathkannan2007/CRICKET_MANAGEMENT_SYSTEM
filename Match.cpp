@@ -8,6 +8,22 @@ Match::Match(int team1ID, int team2ID)
     team1 = getTeamByID(team1ID);
     team2 = getTeamByID(team2ID);
 }
+Team* Match::getTeam1()
+{
+    return team1;
+}
+Team* Match::getTeam2()
+{
+    return team2;
+}
+PlayingXI* Match::getTeam1XI()
+{
+    return &team1XI;
+}
+PlayingXI* Match::getTeam2XI()
+{
+    return &team2XI;
+}
 void Match::generatePlayingXIs()
 {
     if(team1 == nullptr || team2 == nullptr)

@@ -19,7 +19,8 @@ class PlayingXI
         PlayingXI();
         void addPlayer(Player *player);
         int size();
-        void display();    
+        void display(); 
+        PlayingNode *getHead();   
 };
 
 #endif

@@ -23,6 +23,10 @@ void PlayingXI::addPlayer(Player *player)
     tail = newNode;
     count ++;
 }
+PlayingNode* PlayingXI::getHead()
+{
+    return head;
+}
 int PlayingXI::size()
 {
     return count;
